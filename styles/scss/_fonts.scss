@@ -1,0 +1,18 @@
+@include font-face(
+  "HelveticaNeueMedium",
+  "../fonts/HelveticaNeue",
+  500,
+  border
+);
+@include font-face(
+  "HelveticaNeueBold",
+  "../fonts/HelveticaNeueBold",
+  700,
+  bold
+);
+@include font-face(
+  "HelveticaNeueRegular",
+  "../fonts/HelveticaNeueRegular",
+  400,
+  normal
+);

@@ -1,0 +1,36 @@
+.order-items {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.order-items-title {
+}
+.order-item {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+.order-item-img {
+  max-width: 200px;
+  max-height: 200px;
+}
+.order-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.order-item-title {
+}
+.order-item-size {
+  color: var(--dark-gray);
+  font-size: 12px;
+}
+.order-item-quaintity {
+  color: var(--dark-gray);
+  font-size: 12px;
+}
+.order-item-price {
+  color: var(--dark-gray);
+  font-size: 12px;
+}

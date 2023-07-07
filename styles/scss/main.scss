@@ -1,0 +1,32 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/header";
+@import "./components/btn";
+@import "./components/section";
+@import "./components/intro";
+@import "./components/product";
+@import "./components/slider";
+@import "./components/essentials";
+@import "./components/footer";
+@import "./components/catalog";
+@import "./components/product-images";
+@import "./components/product-info";
+@import "./components/prouct-gallery-block";
+@import "./components/cart";
+@import "./components/cart-item";
+@import "./components/order-info";
+@import "./components/order";
+@import "./components/order-form";
+@import "./components/order-items";
+// тестовые стили, удалите их
+.page__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--vh);
+}

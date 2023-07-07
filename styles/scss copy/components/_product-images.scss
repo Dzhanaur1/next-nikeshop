@@ -1,0 +1,17 @@
+.prouct-wrapper {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 150px;
+}
+
+.product-images {
+  padding-right: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.product-image {
+  min-width: 420px;
+}
