@@ -24,7 +24,7 @@ body {
 }
 
 .page {
-  height: 100%;
+  min-height: 100%;
   font-family: var(--font-family, sans-serif);
   -webkit-text-size-adjust: 100%;
   font-size: 15px;
@@ -40,13 +40,12 @@ img {
 a {
   text-decoration: none;
 }
-
-.site-container {
-  // overflow: hidden;
+#__next {
   display: flex;
   flex-direction: column;
-  height: 100%; // если используете на сайте position: sticky - уберите эту настройку
+  height: 100%;
 }
+
 .main {
   flex: 1 0 auto;
 }

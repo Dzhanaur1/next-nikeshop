@@ -7,5 +7,6 @@ export async function getAllProducts() {
 
 export async function getProductById(id) {
   const response = await fetch(`${API_URL}/item/${id}`);
+
   return await response.json();
 }

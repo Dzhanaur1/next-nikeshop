@@ -2,20 +2,12 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts, getProductById } from "@/services/porudct";
 import { addTocart, reduceQunatity } from "@/redux/slices/cartSlice";
-const Product = ({
-  product_id,
-  product_image,
-  product_name,
-  product_price,
-  product_category,
-  images,
-  product,
-}) => {
+const Product = ({ name, discription, price, id, sizes, images }) => {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [productSize, setProductSize] = React.useState("");
   const prodcut = useSelector((state) =>
-    state.cartSlice.items.find((obj) => obj.product_id === product_id)
+    state.cartSlice.items.find((obj) => obj.id === id)
   );
   const productImages = [];
   const [productAdded, setProductAdded] = React.useState(false);
@@ -29,12 +21,11 @@ const Product = ({
   const OnClickAdd = () => {
     if (productSize) {
       const item = {
-        product_id,
-        product_image: images[0],
-        product_name,
-        product_price,
-        product_category,
-        quantity: 0,
+        id,
+        name,
+        price,
+        category: categories[1],
+        image: images[0],
         size: productSize,
       };
       dispatch(addTocart(item));
@@ -49,20 +40,20 @@ const Product = ({
     setProductSize(selectedSize);
   };
   const categories = ["Men's shoes", "Women's shoes"];
-  const sizes = [
-    "UK 6 (EU 40)",
-    "UK 6.5",
-    "UK 7",
-    "UK 7.5",
-    "UK 8",
-    "UK 8.5",
-    "UK 9",
-    "UK 9.5",
-    "UK 10",
-    "UK 10.5",
-    "UK 11",
-    "UK 11.5",
-  ];
+  // const sizes = [
+  //   "UK 6 (EU 40)",
+  //   "UK 6.5",
+  //   "UK 7",
+  //   "UK 7.5",
+  //   "UK 8",
+  //   "UK 8.5",
+  //   "UK 9",
+  //   "UK 9.5",
+  //   "UK 10",
+  //   "UK 10.5",
+  //   "UK 11",
+  //   "UK 11.5",
+  // ];
   return (
     <React.Fragment>
       <div className="product-images">
@@ -71,9 +62,9 @@ const Product = ({
         ))}
       </div>
       <div className="prouct-info">
-        <h1 className="prouct-title">{product_name}</h1>
-        <p className="product-type">{categories[product_category - 1]}</p>
-        <p className="product-price">MRP : ₹ {product_price}</p>
+        <h1 className="prouct-title">{name}</h1>
+        <p className="product-type">{categories[1]}</p>
+        <p className="product-price">MRP : ₹ {price}</p>
 
         <div className="block-sizes">
           <div className="sizes-header">
@@ -109,7 +100,7 @@ const Product = ({
               }
             >
               <button
-                onClick={() => dispatch(reduceQunatity(product_id))}
+                onClick={() => dispatch(reduceQunatity(id))}
                 className="button btn--black "
               >
                 -

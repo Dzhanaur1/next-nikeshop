@@ -17,6 +17,7 @@ const Item = ({ product }) => {
 export default Item;
 export async function getServerSideProps({ params }) {
   const product = await getProductById(params.id);
+  console.log(product);
   return {
     props: { product },
   };
@@ -37,8 +38,8 @@ export async function getServerSideProps({ params }) {
 //   getAllProducts;
 //   console.log(products);
 //   return {
-//     paths: products.map(({ product_id }) => ({
-//       params: { id: product_id.toString() },
+//     paths: products.map(({ id }) => ({
+//       params: { id: id.toString() },
 //     })),
 //     fallback: false,
 //   };

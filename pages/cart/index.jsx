@@ -3,7 +3,9 @@ import { clearAllCart, removeFromCart } from "@/redux/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 export default function Cart() {
   const cartItems = useSelector((state) => state.cartSlice.items);
-  const totalPrice = useSelector((state) => state.cartSlice.totalPrice);
+  let totalPrice = useSelector((state) => state.cartSlice.totalPrice).toFixed(
+    2
+  );
   console.log(cartItems);
   const dispatch = useDispatch();
   const clearCart = () => {

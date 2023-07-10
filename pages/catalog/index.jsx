@@ -6,15 +6,15 @@ import React, { useState } from "react";
 
 export const Catalog = ({ products }) => {
   const [catalogItems, setCatalogItems] = React.useState([]);
-
+  const productItmes = products || [];
   const [isCheked, setIsCheked] = React.useState(false);
   const [sortCategoryId, setSortCategoryId] = React.useState("");
   //   const handleAddToCart = (item) => {
   //     const cartItem = {
-  //       id: item.product_id,
-  //       name: item.product_name,
+  //       id: item.id,
+  //       name: item.name,
   //       price: item.product_price,
-  //       img: item.product_image,
+  //       img: item.image,
   //     };
 
   //     dispatch(addTocart(cartItem));
@@ -50,8 +50,8 @@ export const Catalog = ({ products }) => {
             </ul>
           </div>
           <div className="list-items">
-            {products.map((obj) => (
-              <CatalogItem {...obj} key={obj.product_id} />
+            {productItmes.map((obj) => (
+              <CatalogItem {...obj} key={obj.id} />
             ))}
           </div>
         </div>
@@ -63,7 +63,7 @@ export const Catalog = ({ products }) => {
 export default Catalog;
 export async function getServerSideProps() {
   const products = await getAllProducts();
-
+  // console.log(products);
   return {
     props: {
       products,
