@@ -1,8 +1,9 @@
+import Link from "next/link";
 import React from "react";
 
 const SliderItem = (slideItem) => {
   return (
-    <div className="product-slide">
+    <Link href={`/catalog/${slideItem.id}`} className="product-slide">
       <div className="slide__content product">
         <div className="slide__img">
           <img src={slideItem.image} alt="" />
@@ -14,7 +15,7 @@ const SliderItem = (slideItem) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
