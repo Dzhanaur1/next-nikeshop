@@ -22,14 +22,23 @@ body {
 *::after {
   box-sizing: inherit;
 }
-
-.page {
+#__next {
+  // padding-top: var(--header-height);
   min-height: 100%;
   font-family: var(--font-family, sans-serif);
   -webkit-text-size-adjust: 100%;
   font-size: 15px;
   color: var(--black);
+  // @include tablet {
+  //   --header-height: 35px;
+  // }
 }
+// .page {
+
+//   // @include small-tablet {
+//   //   --header-height: 35px;
+//   // }
+// }
 
 img {
   height: auto;
@@ -48,6 +57,10 @@ a {
 
 .main {
   flex: 1 0 auto;
+  padding-top: 80px;
+  @include tablet {
+    padding-top: 30px;
+  }
 }
 
 .is-hidden {

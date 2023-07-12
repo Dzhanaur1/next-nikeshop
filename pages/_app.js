@@ -7,13 +7,13 @@ import { Provider } from "react-redux";
 export default function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
+      <Header />
       <main className="main">
-        <Header />
         <div className="container">
           <Component {...pageProps} />
         </div>
-        <Footer />
       </main>
+      <Footer />
     </Provider>
   );
 }

@@ -24,7 +24,7 @@ const Footer = () => {
               </Link>
             </div>
             <div className="col">
-              <Link href="/" className="footer__links accent-link">
+              <Link href="/" className="footer__links ">
                 Get Help
               </Link>
               <Link href="/" className="footer__links">

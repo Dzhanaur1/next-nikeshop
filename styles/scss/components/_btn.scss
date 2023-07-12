@@ -8,6 +8,17 @@
   font-family: "HelveticaNeueRegular", sans-serif;
   transition: linear 0.15s;
   cursor: pointer;
+  @include tablet {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+  @include mobile {
+    padding: 4px 20px;
+    border-radius: 15px;
+    font-size: 10px;
+    height: 30px;
+  }
 }
 .btn--black {
   color: var(--light-color);

@@ -1,1 +1,1 @@
-export const API_URL = "https://nike-shop-server.vercel.app/api/";
+export const API_URL = "https://nike-shop-server.vercel.app/api";

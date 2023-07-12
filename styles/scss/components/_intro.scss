@@ -1,8 +1,27 @@
 .intro {
-  &__img {
+  &__subtitle {
+    @include tablet {
+      font-size: 18px;
+    }
+    @include small-tablet {
+      font-size: 14px;
+    }
+    @include mobile {
+      font-size: 11px;
+    }
+  }
+  .buttons {
+    display: flex;
+    gap: 10px;
   }
   &__text {
     margin-bottom: 4px;
     font-style: 15px;
+  }
+  &__img {
+    @include mobile {
+      height: 260px;
+      width: auto;
+    }
   }
 }

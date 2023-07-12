@@ -8,6 +8,9 @@
     display: flex;
     flex-direction: column;
   }
+  @include tablet {
+    margin-top: 35px;
+  }
 
   // .footer__content
 
@@ -15,6 +18,13 @@
     padding-top: 40px;
     display: flex;
     justify-content: space-between;
+    @include mobile {
+      flex-direction: column;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+    }
   }
 
   // .footer__links
@@ -36,6 +46,10 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  @include mobile {
+    flex-direction: row;
+    gap: 15px;
+  }
 }
 .accent-link {
   text-transform: uppercase;
@@ -43,11 +57,22 @@
     color: var(--light-color);
   }
   color: var(--light-color);
+  @include mobile {
+    font-size: 10px;
+    line-height: 1.5;
+    text-align: center;
+  }
 }
 .social-links {
   display: flex;
   justify-content: right;
   flex: 3;
+  @include mobile {
+    img {
+      width: 26px;
+      height: auto;
+    }
+  }
 }
 .social-link {
   margin: 0 16px;
@@ -62,6 +87,10 @@
     color: var(--dark-gray);
     width: 100%;
     justify-content: space-between;
+    @include mobile {
+      flex-direction: column-reverse;
+      gap: 15px;
+    }
   }
 }
 .location {
@@ -85,7 +114,19 @@
   flex: 3;
   justify-content: right;
   display: flex;
+  @include small-tablet {
+    font-size: 13px;
+    // flex-direction: column;
+  }
+
   li {
     margin: 0 25px;
+    @include tablet {
+      margin: 0 15px;
+    }
+    @include mobile {
+      font-size: 11px;
+      margin-bottom: 15px;
+    }
   }
 }

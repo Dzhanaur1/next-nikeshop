@@ -1,9 +1,11 @@
+import MainSlider from "@/Components/Slider";
+import { getAllProducts } from "@/services/porudct";
 import Head from "next/head";
 import Image from "next/image";
 
 // import "../styles/globals.scss";
 
-export default function HomePage() {
+export default function HomePage({ sliderItems }) {
   return (
     <>
       <section className="section intro">
@@ -26,57 +28,7 @@ export default function HomePage() {
         </div>
       </section>
       <div className="section">
-        <div className="slider__wrapper">
-          <h3 className="slider__title">Best of&nbsp;Air Max</h3>
-          <div className="slider-btns">
-            <button className="back-btn disable" />
-            <button className="prev-btn" />
-          </div>
-        </div>
-        <div className="sldier product-slider">
-          <div className="slide product-slide">
-            <div className="product">
-              <div className="product__img">
-                <img src="./../img/slder.png" alt="" />
-              </div>
-              <div className="product__content">
-                <div className="product__info">
-                  <h4 className="product__title">Nike Air Max Pulse</h4>
-                  <p className="product__subtitle">Women’s Shoes</p>
-                </div>
-                <p className="product__price">₹ 13 995</p>
-              </div>
-            </div>
-          </div>
-          <div className="slide product-slide">
-            <div className="product">
-              <div className="product__img">
-                <img src="./../img/slder.png" alt="" />
-              </div>
-              <div className="product__content">
-                <div className="product__info">
-                  <h4 className="product__title">Nike Air Max Pulse</h4>
-                  <p className="product__subtitle">Women’s Shoes</p>
-                </div>
-                <p className="product__price">₹ 13 995</p>
-              </div>
-            </div>
-          </div>
-          <div className="slide product-slide">
-            <div className="product">
-              <div className="product__img">
-                <img src="./../img/slder.png" alt="" />
-              </div>
-              <div className="product__content">
-                <div className="product__info">
-                  <h4 className="product__title">Nike Air Max Pulse</h4>
-                  <p className="product__subtitle">Women’s Shoes</p>
-                </div>
-                <p className="product__price">₹ 13 995</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <MainSlider slides={sliderItems} />
       </div>
       <section className="section">
         <h3 className="section__name">Featured</h3>
@@ -133,4 +85,13 @@ export default function HomePage() {
       </section>
     </>
   );
+}
+export async function getServerSideProps() {
+  const sliderItems = await getAllProducts();
+
+  return {
+    props: {
+      sliderItems,
+    },
+  };
 }

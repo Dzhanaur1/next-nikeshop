@@ -3,7 +3,6 @@
 
   &_img {
     width: 100%;
-    height: 100%;
   }
 
   // .essentials__content
@@ -11,6 +10,10 @@
   &__content {
     display: flex;
     gap: 12px;
+    @include mobile {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 
   // .essentials__item
@@ -18,6 +21,12 @@
   &__item {
     max-height: 540px;
     position: relative;
+    overflow: hidden;
+    @include mobile {
+      width: 100%;
+      height: auto;
+      max-height: 350px;
+    }
   }
   & .button {
     position: absolute;
