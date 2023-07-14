@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts, getProductById } from "@/services/porudct";
 import { addTocart, reduceQunatity } from "@/redux/slices/cartSlice";
+import { useMediaQuery } from "react-responsive";
+import ProductSlider from "./productSlider";
 const Product = ({ name, discription, price, id, sizes, images }) => {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = React.useState(false);
@@ -9,6 +11,7 @@ const Product = ({ name, discription, price, id, sizes, images }) => {
   const prodcut = useSelector((state) =>
     state.cartSlice.items.find((obj) => obj.id === id)
   );
+  const isModible = useMediaQuery({ maxWidth: 578 });
   const productImages = [];
   const [productAdded, setProductAdded] = React.useState(false);
   const productQuantity = prodcut ? prodcut.quantity : 0;
@@ -17,7 +20,7 @@ const Product = ({ name, discription, price, id, sizes, images }) => {
     setIsLoaded(true);
   }, [productQuantity]);
 
-  // console.log(prodcut);
+  // console.log(images);
   const OnClickAdd = () => {
     if (productSize) {
       const item = {
@@ -56,11 +59,16 @@ const Product = ({ name, discription, price, id, sizes, images }) => {
   // ];
   return (
     <React.Fragment>
-      <div className="product-images">
-        {images.map((image) => (
-          <img key={image} src={image} alt="" className="product-image" />
-        ))}
-      </div>
+      {isModible ? (
+        <ProductSlider images={images} />
+      ) : (
+        <div className="product-images">
+          {images.map((image) => (
+            <img key={image} src={image} alt="" className="product-image" />
+          ))}
+        </div>
+      )}
+
       <div className="prouct-info">
         <h1 className="prouct-title">{name}</h1>
         <p className="product-type">{categories[1]}</p>

@@ -26,13 +26,16 @@
   &__item {
   }
 }
-.sort-items {
+.sort-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   align-items: end;
   padding-right: 5px;
+  @include mobile {
+    margin-top: 15px;
+  }
 }
 .sort-text {
   display: inline-flex;
@@ -43,7 +46,7 @@
 .sorts-list {
   position: absolute;
   top: 25px;
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: 5px;
   background-color: var(--light-color);
@@ -64,6 +67,9 @@
       color: white;
     }
   }
+  &.visible {
+    display: flex;
+  }
 }
 .sort {
 }
@@ -72,6 +78,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 16px;
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .item {
   &__img {
@@ -79,20 +88,38 @@
     max-height: 348px;
     height: auto;
     margin-bottom: 10px;
+    @include mobile {
+      height: 200px;
+      background-color: var(--light-gray);
+    }
   }
   &-collection {
     color: #9e3500;
+    @include mobile {
+      font-size: 10px;
+    }
   }
   &-title {
     margin: 5px 0;
     font-size: 15px;
+    @include mobile {
+      font-size: 12px;
+      max-width: 80%;
+    }
   }
   &-type {
     color: var(--dark-gray);
     font-family: var(--regular-font-family);
+    @include mobile {
+      font-size: 11px;
+    }
   }
   &-price {
     margin-top: 15px;
+    @include mobile {
+      font-size: 12px;
+      margin-top: 10px;
+    }
   }
 }
 
@@ -152,6 +179,7 @@
 }
 .filter-arrow {
   margin-left: 5px;
+  transition: all 0.1s linear;
   &.active {
     transform: rotate(180deg);
   }

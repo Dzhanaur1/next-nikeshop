@@ -1,7 +1,3 @@
-import { getAllProducts } from "@/services/porudct";
-
-import React, { useEffect, useState } from "react";
-
 import SliderItem from "./SliderItem";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
@@ -10,17 +6,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-
+import React from "react";
 const MainSlider = ({ slides }) => {
-  const [isLoaded, setIsLoaded] = React.useState(false);
+  // const [isLoaded, setIsLoaded] = React.useState(false);
   const sliderSlides = slides;
 
   return (
     <React.Fragment>
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Pagination]}
         spaceBetween={20}
         breakpoints={{
           576: {

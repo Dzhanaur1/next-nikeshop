@@ -64,7 +64,7 @@ const Header = () => {
           </div>
           <div className="mobile-nav">
             <Link onClick={() => setBurgerIsOpen(false)} href="/">
-              <img src="./img//svg/logo.svg" alt="" className="header__logo" />
+              <img src="/img/svg/logo.svg" alt="" className="header__logo" />
             </Link>
 
             <div className="mobile-nav__content">

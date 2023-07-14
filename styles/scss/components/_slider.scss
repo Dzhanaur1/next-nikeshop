@@ -2,6 +2,9 @@
   max-width: 100%;
   display: flex !important;
   flex-direction: column-reverse;
+  & .swiper-scrollbar {
+    background: transparent;
+  }
 }
 .slider {
   &__wrapper {
@@ -33,6 +36,9 @@
 }
 
 .product-slider {
+  &__img {
+    background-color: var(--light-gray);
+  }
 }
 
 .slide {

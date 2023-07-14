@@ -5,39 +5,31 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 export const Catalog = ({ products }) => {
-  const [catalogItems, setCatalogItems] = React.useState([]);
   const productItmes = products || [];
-  const [isCheked, setIsCheked] = React.useState(false);
-  const [sortCategoryId, setSortCategoryId] = React.useState("");
-  //   const handleAddToCart = (item) => {
-  //     const cartItem = {
-  //       id: item.id,
-  //       name: item.name,
-  //       price: item.product_price,
-  //       img: item.image,
-  //     };
+  const [sortIsVisibly, setSortIsVisibly] = useState(false);
 
-  //     dispatch(addTocart(cartItem));
-  //   };
-  //   const setCategory = (id) => {
-  //     setIsCheked(!isCheked);
-  //     if (!isCheked) {
-  //       setSortCategoryId(id);
-  //     } else {
-  //       setSortCategoryId("");
-  //     }
-  //   };
   return (
     <>
       <div className="catalog__inner">
         {/* <CatalogFilter /> */}
         <div className="catalog__items">
-          <div className="sort-items">
+          <div
+            onClick={() => setSortIsVisibly(!sortIsVisibly)}
+            className="sort-wrapper"
+          >
             <div className="sort-text">
               <p>Sort By</p>
-              <img src="./img/svg/filter-arrow.svg" alt="" />
+              <img
+                src="./img/svg/filter-arrow.svg"
+                className={
+                  sortIsVisibly ? "filter-arrow active" : "filter-arrow"
+                }
+                alt=""
+              />
             </div>
-            <ul className="sorts-list">
+            <ul
+              className={sortIsVisibly ? "sorts-list visible" : "sorts-list "}
+            >
               <li className="sort">
                 <button>По возрастанию</button>
               </li>

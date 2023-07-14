@@ -2,6 +2,9 @@
   display: flex;
 
   flex-direction: column;
+  @include mobile {
+    padding-top: 20px;
+  }
 }
 .prouct-title {
   font-size: 27px;
