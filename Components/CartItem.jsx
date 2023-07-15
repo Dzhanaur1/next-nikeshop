@@ -28,10 +28,10 @@ const CartItem = ({ id, image, name, price, product_category, size }) => {
 
   const categories = ["Men's shoes", "Women's shoes"];
   return (
-    <Link href={`/catalog/${id}`} class="cart-item">
-      <div class="item-img">
+    <div class="cart-item">
+      <Link href={`/catalog/${id}`} class="item-img">
         <img src={image} alt="" />
-      </div>
+      </Link>
       <div class="item-info">
         <h3 class="item-title">{name}</h3>
         <p class="item-type">{categories[product_category - 1]}</p>
@@ -55,7 +55,7 @@ const CartItem = ({ id, image, name, price, product_category, size }) => {
       <div class="cart-item-price">
         <p>MRP: ₹ {price}</p>
       </div>
-    </Link>
+    </div>
   );
 };
 
