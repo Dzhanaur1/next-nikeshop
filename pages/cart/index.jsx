@@ -15,7 +15,7 @@ export default function Cart() {
   const clearCart = () => {
     dispatch(clearAllCart());
   };
-  console.log(popupVisible);
+
   return (
     <>
       <div className="min-container">

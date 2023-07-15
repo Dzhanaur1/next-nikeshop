@@ -10,7 +10,6 @@ export const postFeedack = (data) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      event.target.reset();
       console.log("Успешно отправлено:", data);
     })
     .catch((error) => {

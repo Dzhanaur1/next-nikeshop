@@ -15,7 +15,9 @@ const PopupForm = ({ products }) => {
       clientData,
       products,
     };
-    // console.log(JSON.stringify(data));
+    console.log(JSON.stringify(data));
+    const feedbackStatus = postFeedack(data);
+    console.log(feedbackStatus + "status");
     postFeedack(data);
     event.target.reset();
   };
@@ -71,7 +73,11 @@ const PopupForm = ({ products }) => {
             >
               Назад
             </button>
-            <button className="button btn--light" type="submit">
+            <button
+              onClick={() => dispatch(setUnvivble())}
+              className="button btn--light"
+              type="submit"
+            >
               Отправить
             </button>
           </div>
