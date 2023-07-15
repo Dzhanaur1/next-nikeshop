@@ -11,15 +11,14 @@ import "swiper/scss/scrollbar";
 import "swiper/scss/pagination";
 const ProductSlider = ({ images }) => {
   const productImages = images;
-  console.log(images);
+
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar]}
       spaceBetween={50}
-      scrollbar={{ draggable: true }}
+      scrollbar={{ draggable: true, hide: true }}
       slidesPerView={1}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
+      className="product-swiper"
     >
       <div className="slider product-slider">
         {productImages.map((image, i) => (

@@ -36,6 +36,9 @@
   width: 100%;
   text-align: center;
   margin-top: 10px;
+  @include mobile {
+    font-size: inherit;
+  }
 }
 .btn--light {
   color: var(--black);

@@ -26,9 +26,13 @@
 }
 .sizes-list {
   margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 7px;
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 15px;
+  }
 }
 .size {
   cursor: pointer;
@@ -36,7 +40,7 @@
   text-align: center;
   border: 1px solid var(--light-gray);
   border-radius: 5px;
-  width: 120px;
+  width: 100%;
   transition: all 0.15s linear;
   &.active {
     background-color: var(--black) !important;

@@ -1,10 +1,18 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const cartItems = useSelector((state) => state.cartSlice.items);
+  const isMounted = useRef(false);
   useEffect(() => {
+    if (isMounted.current) {
+      const json = JSON.stringify(cartItems);
+      localStorage.setItem("cart", json);
+    }
+    isMounted.current = true;
     setBurgerIsOpen(false);
-  }, []);
+  }, [cartItems]);
   const openBurger = () => {
     setBurgerIsOpen(!burgerIsOpen);
     burgerIsOpen

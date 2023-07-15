@@ -6,6 +6,9 @@
   max-width: 150px;
   max-height: 150px;
   flex: 1;
+  @include mobile {
+    flex: 1.5;
+  }
 }
 .item-info {
   display: flex;
@@ -20,6 +23,9 @@
 .item-params {
   display: flex;
   gap: 10px;
+  @include mobile {
+    font-size: 12px;
+  }
 }
 .item-size {
 }
@@ -27,6 +33,9 @@
   margin-top: 30px;
   display: flex;
   gap: 10px;
+  @include mobile {
+    margin-top: 10px;
+  }
 }
 .cart-item-price {
   height: 100%;

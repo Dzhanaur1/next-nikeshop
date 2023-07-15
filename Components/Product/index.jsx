@@ -6,21 +6,18 @@ import { useMediaQuery } from "react-responsive";
 import ProductSlider from "./productSlider";
 const Product = ({ name, discription, price, id, sizes, images }) => {
   const dispatch = useDispatch();
-  const [isLoaded, setIsLoaded] = React.useState(false);
   const [productSize, setProductSize] = React.useState("");
   const prodcut = useSelector((state) =>
     state.cartSlice.items.find((obj) => obj.id === id)
   );
   const isModible = useMediaQuery({ maxWidth: 578 });
-  const productImages = [];
   const [productAdded, setProductAdded] = React.useState(false);
   const productQuantity = prodcut ? prodcut.quantity : 0;
+
   useEffect(() => {
     productQuantity > 0 ? setProductAdded(true) : setProductAdded(false);
-    setIsLoaded(true);
   }, [productQuantity]);
 
-  // console.log(images);
   const OnClickAdd = () => {
     if (productSize) {
       const item = {
@@ -31,9 +28,9 @@ const Product = ({ name, discription, price, id, sizes, images }) => {
         image: images[0],
         size: productSize,
       };
+
       dispatch(addTocart(item));
-      console.log("Click");
-      console.log(prodcut);
+      set;
       setProductAdded(true);
     } else {
       alert("Выберите размер");
@@ -43,20 +40,6 @@ const Product = ({ name, discription, price, id, sizes, images }) => {
     setProductSize(selectedSize);
   };
   const categories = ["Men's shoes", "Women's shoes"];
-  // const sizes = [
-  //   "UK 6 (EU 40)",
-  //   "UK 6.5",
-  //   "UK 7",
-  //   "UK 7.5",
-  //   "UK 8",
-  //   "UK 8.5",
-  //   "UK 9",
-  //   "UK 9.5",
-  //   "UK 10",
-  //   "UK 10.5",
-  //   "UK 11",
-  //   "UK 11.5",
-  // ];
   return (
     <React.Fragment>
       {isModible ? (

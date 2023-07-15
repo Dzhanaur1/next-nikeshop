@@ -22,25 +22,3 @@ export async function getServerSideProps({ params }) {
     props: { product },
   };
 }
-// export async function getStaticProps(context) {
-//   // console.log(context);
-//   const product = await getProductById(context.params.id);
-//   console.log(product);
-//   return {
-//     props: {
-//       product,
-//     },
-//   };
-// }
-
-// export async function getStaticPaths() {
-//   const products = await getAllProducts();
-//   getAllProducts;
-//   console.log(products);
-//   return {
-//     paths: products.map(({ id }) => ({
-//       params: { id: id.toString() },
-//     })),
-//     fallback: false,
-//   };
-// }

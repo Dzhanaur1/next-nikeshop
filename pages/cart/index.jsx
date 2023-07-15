@@ -6,7 +6,6 @@ export default function Cart() {
   let totalPrice = useSelector((state) => state.cartSlice.totalPrice).toFixed(
     2
   );
-  console.log(cartItems);
   const dispatch = useDispatch();
   const clearCart = () => {
     dispatch(clearAllCart());

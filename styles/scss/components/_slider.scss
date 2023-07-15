@@ -2,8 +2,16 @@
   max-width: 100%;
   display: flex !important;
   flex-direction: column-reverse;
+
   & .swiper-scrollbar {
     background: transparent;
+  }
+}
+.product-swiper {
+  background-color: var(--light-gray);
+  & .swiper-slide {
+    display: flex;
+    justify-content: center;
   }
 }
 .slider {
@@ -37,7 +45,8 @@
 
 .product-slider {
   &__img {
-    background-color: var(--light-gray);
+    width: 100%;
+    height: 100%;
   }
 }
 

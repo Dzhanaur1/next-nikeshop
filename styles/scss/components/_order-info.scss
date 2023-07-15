@@ -3,6 +3,9 @@
   display: flex;
   flex-direction: column;
   font-family: var(--regular-font-family);
+  @include mobile {
+    margin-top: 30px;
+  }
 }
 .order-title {
   font-size: 21px;

@@ -3,6 +3,9 @@
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+  @include mobile {
+    flex-direction: column;
+  }
 }
 .cart-items {
   flex: 2;

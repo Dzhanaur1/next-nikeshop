@@ -8,7 +8,7 @@ const CartItem = ({ id, image, name, price, product_category, size }) => {
   const selectItem = useSelector((state) =>
     state.cartSlice.items.find((obj) => obj.id === id)
   );
-  const itemQuantity = selectItem.quantity;
+  const itemQuantity = selectItem?.quantity;
   const dispatch = useDispatch();
   const OnClickAdd = () => {
     const item = {
