@@ -4,6 +4,7 @@ import {
   reduceQunatity,
   addTocart,
 } from "../redux/slices/cartSlice";
+import Link from "next/link";
 const CartItem = ({ id, image, name, price, product_category, size }) => {
   const selectItem = useSelector((state) =>
     state.cartSlice.items.find((obj) => obj.id === id)
@@ -27,7 +28,7 @@ const CartItem = ({ id, image, name, price, product_category, size }) => {
 
   const categories = ["Men's shoes", "Women's shoes"];
   return (
-    <div class="cart-item">
+    <Link href={`/catalog/${id}`} class="cart-item">
       <div class="item-img">
         <img src={image} alt="" />
       </div>
@@ -54,20 +55,7 @@ const CartItem = ({ id, image, name, price, product_category, size }) => {
       <div class="cart-item-price">
         <p>MRP: ₹ {price}</p>
       </div>
-    </div>
-    // <div className="">
-    //   <h2>{name}</h2>
-    //   <img src={image} alt="" width={200} height={200} />
-    //   <h4>{product_price}</h4>
-    //   <button onClick={() => dispatch(removeFromCart(id))}>
-    //     Удалить
-    //   </button>
-    //   <div className="">
-    //     <button onClick={() => minus(id)}>-</button>
-    //     <span>{itemQuantity}</span>
-    //     <button onClick={() => OnClickAdd()}>+</button>
-    //   </div>
-    // </div>
+    </Link>
   );
 };
 

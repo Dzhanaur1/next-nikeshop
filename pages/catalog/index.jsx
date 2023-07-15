@@ -55,7 +55,7 @@ export const Catalog = ({ products }) => {
 export default Catalog;
 export async function getServerSideProps() {
   const products = await getAllProducts();
-  // console.log(products);
+
   return {
     props: {
       products,

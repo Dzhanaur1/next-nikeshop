@@ -59,7 +59,7 @@ export default function HomePage({ sliderItems }) {
         <div className="essentials__content">
           <div className="essentials__item">
             <img
-              src="./img//essentials/Image-1.png"
+              src="./img/essentials/Image-1.png"
               alt=""
               className="essentials_img"
             />
@@ -67,7 +67,7 @@ export default function HomePage({ sliderItems }) {
           </div>
           <div className="essentials__item">
             <img
-              src="./img//essentials/Image.png"
+              src="./img/essentials/Image.png"
               alt=""
               className="essentials_img"
             />
@@ -75,7 +75,7 @@ export default function HomePage({ sliderItems }) {
           </div>
           <div className="essentials__item">
             <img
-              src="./img//essentials/Image-2.png"
+              src="./img/essentials/Image-2.png"
               alt=""
               className="essentials_img"
             />

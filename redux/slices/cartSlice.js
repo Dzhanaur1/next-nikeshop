@@ -18,7 +18,6 @@ const cartSlice = createSlice({
       const foundItem = state.items.find((obj) => obj.id === action.payload.id);
       if (foundItem) {
         foundItem.quantity++;
-        // console.log(foundItem.quantity);
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
       }

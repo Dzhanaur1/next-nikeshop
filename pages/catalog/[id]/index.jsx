@@ -17,7 +17,7 @@ const Item = ({ product }) => {
 export default Item;
 export async function getServerSideProps({ params }) {
   const product = await getProductById(params.id);
-  console.log(product);
+
   return {
     props: { product },
   };
