@@ -45,6 +45,8 @@
       border-radius: 15px;
       border: none;
       background-color: var(--light-gray);
+
+      -webkit-tap-highlight-color: transparent;
     }
   }
   &__btns {
