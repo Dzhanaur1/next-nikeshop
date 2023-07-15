@@ -30,7 +30,7 @@ const Product = ({ name, discription, price, id, sizes, images }) => {
       };
 
       dispatch(addTocart(item));
-      set;
+
       setProductAdded(true);
     } else {
       alert("Выберите размер");

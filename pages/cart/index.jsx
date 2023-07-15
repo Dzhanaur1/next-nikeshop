@@ -1,7 +1,12 @@
 import CartItem from "@/Components/CartItem";
+import PopupForm from "@/Components/PopupForm";
 import { clearAllCart, removeFromCart } from "@/redux/slices/cartSlice";
+import { setIsVisible, setUnvivble } from "@/redux/slices/popupSlice";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 export default function Cart() {
+  const [isSubmit, seIsSubmit] = useState(false);
+  const popupVisible = useSelector((state) => state.popupSlice);
   const cartItems = useSelector((state) => state.cartSlice.items);
   let totalPrice = useSelector((state) => state.cartSlice.totalPrice).toFixed(
     2
@@ -10,7 +15,7 @@ export default function Cart() {
   const clearCart = () => {
     dispatch(clearAllCart());
   };
-
+  console.log(popupVisible);
   return (
     <>
       <div className="min-container">
@@ -37,10 +42,14 @@ export default function Cart() {
                 <p>Total</p>
                 <p className="price">₹ {totalPrice}</p>
               </div>
-              <a href="./order.html" className="btn--black long--btn button">
+              <button
+                onClick={() => seIsSubmit(dispatch(setIsVisible()))}
+                className="btn--black long--btn button"
+              >
                 Member Checkout
-              </a>
+              </button>
             </div>
+            <PopupForm products={cartItems}></PopupForm>
           </div>
         ) : (
           <div className="cart__content">
